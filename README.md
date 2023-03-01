@@ -7,7 +7,7 @@
   <br>
 </p>
 
-<h2 align='center'>Awesome Vite.js</h2>
+<h2 align='center'>Awesome Boilerplate: Vite + React + PWA </h2>
 
 <p align='center'>
 A curated list of awesome things related to <a href='https://github.com/vitejs/vite'>Vite.js</a>
@@ -26,8 +26,7 @@ A curated list of awesome things related to <a href='https://github.com/vitejs/v
 
 Use the "Table of Contents" menu on the top-left corner to explore the list.
 
-## CMD
-# For Build 
-  - yarn run build 
+# CMD 
+- yarn run build 
 - For Run Build Project 
-  - yarn run preview
+- yarn run preview
