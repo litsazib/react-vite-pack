@@ -1,39 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { FaBeer } from 'react-icons/fa';
+import React, {Fragment} from 'react';
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import LoginPage from "./pages/Login-Page";
+// import RegistrationPage from "./pages/Registration-Page";
+// import DashboardPage from "./pages/Dashboard-Page";
+import Page404 from "./pages/Page-404";
+import FullscreenLoader from "./components/masterLayout/Fullscreen-Loader";
+import {getToken} from "./helper/SessionHelper";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
-  return (
-    <div className="App">
-      <div className='flex'>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-                  <h3> Lets go for a <FaBeer /></h3>
-      </div>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React + PWA</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    if(getToken()){
+        return (
+            <Fragment>
+                <BrowserRouter>
+                    <Routes>
+                        {/* <Route exact path="/" element={<DashboardPage/>}/> */}
+                        <Route path="*" element={<Page404/>}/>
+                    </Routes>
+                </BrowserRouter>
+                <FullscreenLoader/>
+            </Fragment>
+        );
+    }
+    else {
+        return (
+            <Fragment>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/Login" replace />}/>
+                        <Route exact path="/Login" element={<LoginPage />}/>
+                        {/* <Route exact path="/Registration" element={<RegistrationPage />}/> */}
+                        <Route path="*" element={<Page404/>}/>
+                    </Routes>
+                </BrowserRouter>
+                <FullscreenLoader/>
+            </Fragment>
+        );
+    }
+};
 
-export default App
+export default App;
