@@ -43,7 +43,12 @@ const Login = () => {
                                         return (
                                         <Form>
                                             <Field placeholder="User Email" className="form-control animated fadeInUp" type="email" name="email" />
-                                            <ErrorMessage name="email" component="div" />
+                                            {/* <ErrorMessage name="email" component="div" /> */}
+                                            <ErrorMessage
+                                                name="email"
+                                                component="div"
+                                                className="text-danger text-blue-50"
+                                            />
                                             <br/>
                                             <Field placeholder="User Password" className="form-control animated fadeInUp" type="password" name="password" />
                                             <ErrorMessage name="password" component="div" />
