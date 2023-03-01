@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { FaBeer } from 'react-icons/fa';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      <div className='flex'>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <h3> Lets go for a <FaBeer /></h3>
+      </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
