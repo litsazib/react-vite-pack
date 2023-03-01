@@ -22,7 +22,7 @@ A curated list of awesome things related to <a href='https://github.com/vitejs/v
 
 ## Table of Contents
 
-<img src="https://user-images.githubusercontent.com/11247099/112722104-819b8a80-8f42-11eb-82f5-dfc2dd5d8a77.png" height="32" />
+<img src="https://vitejs.dev/logo-with-shadow.png" height="32" />
 
 Use the "Table of Contents" menu on the top-left corner to explore the list.
 
