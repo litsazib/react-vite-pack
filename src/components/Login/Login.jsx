@@ -2,6 +2,7 @@ import React, {Fragment, useRef} from 'react';
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import './login.css'
 
 const Login = () => {
 
@@ -33,7 +34,7 @@ const Login = () => {
                     <div className="col-md-7 col-lg-6 center-screen">
                         <div className="card w-90  p-4">
                             <div className="card-body">
-                                <h4>SIGN IN</h4>
+                                <h4 className='Heading'>SIGN IN</h4>
                                 <Formik
                                     initialValues={{ email: "", password: "" }}
                                     validationSchema={loginSchema}
@@ -51,7 +52,7 @@ const Login = () => {
                                             />
                                             <br/>
                                             <Field placeholder="User Password" className="form-control animated fadeInUp" type="password" name="password" />
-                                            <ErrorMessage name="password" component="div" />
+                                            <ErrorMessage className="text-danger text-blue-50" name="password" component="div" />
                                             <br/>
                                             <button type="submit" disabled={isSubmitting} className="btn w-100 animated fadeInUp float-end btn-primary">Submit</button>
                                         </Form>
