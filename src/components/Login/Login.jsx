@@ -1,15 +1,28 @@
 import React, {Fragment, useRef} from 'react';
 import {Link} from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import './login.css'
 
 const Login = () => {
 
+    const formik = useFormik({
+        initialValues: {
+            email: "", 
+            password: ""
+        }
+    })
+
+    const initialValues= {
+        email: "", 
+        password: ""
+    }
+
+    
     const handleSubmit = (values, { setSubmitting }) => {
-        // setTimeout(() => {
-        //     setSubmitting(false);
-        // }, 400);
+        setTimeout(() => {
+            setSubmitting(false);
+        }, 400);
         console.log(values)
     };
 
@@ -36,7 +49,7 @@ const Login = () => {
                             <div className="card-body">
                                 <h4 className='Heading'>SIGN IN</h4>
                                 <Formik
-                                    initialValues={{ email: "", password: "" }}
+                                    initialValues={initialValues}
                                     validationSchema={loginSchema}
                                     onSubmit={handleSubmit}
                                     >
